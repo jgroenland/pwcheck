@@ -31,6 +31,8 @@ def searchForPass(password):
 
 if len(sys.argv) != 2 :
   print ("Usage: python3 test.py <pw>")
+  sys.exit(0)
+  
 nargs = len(sys.argv)
 print ( " nargs %s" %nargs)
 
