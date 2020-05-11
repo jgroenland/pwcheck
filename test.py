@@ -4,7 +4,7 @@ import os
 import hashlib
 import sys
 
-pwned_passwords_file = "/home/josg/data/pwned-passwords-sha1-ordered-by-count-v4.txt"
+pwned_passwords_file = "/home/josg/data/pwned-passwords-sha1-ordered-by-count-v5.txt"
 #pwned_passwords_file = "/home/josg/data/test.txt"
 
 def searchForPass(password):
@@ -34,12 +34,20 @@ def searchForPass(password):
     
     print("Password not found")
 
-if len(sys.argv) != 2 :
-  print ("Usage: python3 test.py <pw>")
-  sys.exit(0)
-  
-nargs = len(sys.argv)
-print ( " nargs %s" %nargs)
+if len(sys.argv) == 2 :
+  # passwd is passed via command line
+  nargs = len(sys.argv)
+  print ( " nargs %s" %nargs)
+  args = sys.argv
+  searchForPass(args[1])
+else :
+  # ask for passwd
+  asknext = True
+  while asknext :
+    userinput = input( "Enter passwd (q to quit): ")
+    if userinput == "q" :
+      asknext = False
+    else: 
+      searchForPass (  userinput )
 
-args = sys.argv
-searchForPass(args[1])
+
