@@ -14,7 +14,7 @@ def searchForPass(password):
     #print("hashstart %s" %pass_hash[0])
   
     password_file = pwned_passwords_file
-    print("Searching in: %s" % password_file)
+    #print("Searching in: %s" % password_file)
 
     line_number = 0
 
@@ -35,13 +35,14 @@ def searchForPass(password):
     print("Password not found")
 
 if len(sys.argv) == 2 :
+
   # passwd is passed via command line
-  nargs = len(sys.argv)
-  print ( " nargs %s" %nargs)
   args = sys.argv
   searchForPass(args[1])
+
 else :
-  # ask for passwd
+
+  # ask for passwd until user wants to quit
   asknext = True
   while asknext :
     userinput = input( "Enter passwd (q to quit): ")
