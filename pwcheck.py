@@ -4,7 +4,7 @@ import os
 import hashlib
 import sys
 
-pwned_passwords_file = "/home/josg/data/pwned-passwords-sha1-ordered-by-count-v5.txt"
+pwned_passwords_file = "/home/josg/data/pwned-passwords-sha1-ordered-by-count-v7.txt"
 #pwned_passwords_file = "/home/josg/data/test.txt"
 
 def searchForPass(password):
