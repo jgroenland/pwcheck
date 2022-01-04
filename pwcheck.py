@@ -1,5 +1,8 @@
 #!/usr/bin/python
 
+# pwcheck by scanning file. 
+# This is the simplest approach however can take a long time when a password is not found as it still needs to scan the whole file
+
 import os
 import hashlib
 import sys

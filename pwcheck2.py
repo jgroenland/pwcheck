@@ -1,7 +1,7 @@
 #!/usr/bin/python
 #
 # Check pwned file by using a dict
-# note this doesn work
+# note this doesn work because of too many dict entries to hold in memory
 #   Memory full after 44.739.242 records, while file contains 613.584.246 lines
 
 import os
