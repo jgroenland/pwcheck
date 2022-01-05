@@ -13,8 +13,8 @@ There are two versions: a brute force that just scans for the file, and a more i
 
 ## Pwcheck - brute force using one large file
 
-For this you need to download the `SHA-1`, `ordered by prevalence` file. (Though the `ordered by hash` should also work).  
-Use `pwcheck.py` to simply scan through the downloaded file. Note that this can take a long time but it can be practical when you just want to check a single password.
+For this you should download the `SHA-1`, `ordered by prevalence` file. Note that `ordered by hash` also works but is slower in finding obvious passwords.  
+Use `pwcheck.py` to simply scan through the downloaded file. This can take a long time but it can be practical when you just want to check a single password.
 
 ## Pwcheck_split - use smaller splitted files
 

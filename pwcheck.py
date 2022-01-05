@@ -7,7 +7,8 @@ import os
 import hashlib
 import sys
 
-pwned_passwords_file = "/home/josg/data/pwned-passwords-sha1-ordered-by-count-v7.txt"
+pwned_passwords_file = "/home/josg/data/pwned-passwords-sha1-ordered-by-hash-v8.txt"
+#pwned_passwords_file = "/home/josg/data/pwned-passwords-sha1-ordered-by-count-v7.txt"
 #pwned_passwords_file = "/home/josg/data/test.txt"
 
 def searchForPass(password):
@@ -19,19 +20,16 @@ def searchForPass(password):
     password_file = pwned_passwords_file
     #print("Searching in: %s" % password_file)
 
-    line_number = 0
-
     with open(password_file, "r") as file:
       for line in file:
-        line_number = line_number + 1
-
+        
         #first check for 1st digit match, to speed up comparison
         if line[0] == pass_hash[0] :
           pwned_hash, pwned_count = line.split(":")
-          #print("Found %s line %s" % (pwned_hash, line_number))
+          #print("Found %s, occurrences: %s" % (pwned_hash, pwned_count))
 
           if pwned_hash == pass_hash:
-            print("Found: '%s' as %s on line %s" % (password, pwned_hash, line_number))
+            print("Found: '%s' as %s occurrences: %s" % (password, pwned_hash, pwned_count))
             return
         
     
